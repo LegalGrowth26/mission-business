@@ -147,4 +147,449 @@
       font-weight: 300; font-style: italic; color: var(--text-muted); margin-bottom: 32px; letter-spacing: 0.02em;
     }
     .hero__body { font-size: 1.05rem; color: var(--text); max-width: 580px; margin-bottom: 40px; line-height: 1.75; }
-    .hero__pr
+    .hero__proof { display: flex; flex-wrap: wrap; gap: 10px 20px; margin-bottom: 44px; }
+    .proof-item { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; color: var(--text); }
+    .proof-item::before {
+      content: '✓'; display: flex; align-items: center; justify-content: center;
+      width: 18px; height: 18px; background: rgba(127, 212, 75, 0.15);
+      border: 1px solid var(--green); border-radius: 2px; font-size: 0.7rem; color: var(--green); flex-shrink: 0;
+    }
+    .hero__actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .hero__soldout { display: inline-flex; align-items: center; gap: 8px; margin-top: 24px; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); }
+    .hero__soldout strong { color: var(--text); }
+
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 48px; }
+    .card { background: var(--panel); border: 1px solid var(--border); border-radius: 2px; padding: 32px 28px; transition: border-color 0.2s; }
+    .card:hover { border-color: var(--border-mid); }
+    .card__icon { font-size: 1.6rem; margin-bottom: 16px; }
+    .card__title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; color: var(--white); letter-spacing: 0.04em; margin-bottom: 10px; line-height: 1.2; }
+    .card__body { font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; }
+
+    .highlights { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 2px; overflow: hidden; margin-top: 48px; }
+    .highlight { background: var(--panel-alt); padding: 32px 28px; display: flex; align-items: flex-start; gap: 16px; }
+    .highlight__num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--green); line-height: 1; flex-shrink: 0; opacity: 0.7; }
+    .highlight__title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 6px; }
+    .highlight__body { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .sold-out-banner { display: flex; align-items: center; gap: 14px; background: rgba(127, 212, 75, 0.06); border: 1px solid var(--border-mid); border-left: 4px solid var(--green); padding: 18px 24px; border-radius: 2px; margin-top: 32px; }
+    .sold-out-banner__icon { font-size: 1.4rem; flex-shrink: 0; }
+    .sold-out-banner__text { font-size: 0.95rem; color: var(--text); }
+    .sold-out-banner__text strong { color: var(--white); }
+
+    .speakers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 48px; }
+    .speaker-card { background: var(--panel); border: 1px solid var(--border); border-radius: 2px; padding: 24px 20px; transition: border-color 0.2s; }
+    .speaker-card:hover { border-color: var(--border-mid); }
+    .speaker-card__avatar { width: 72px; height: 72px; border-radius: 2px; background: rgba(127, 212, 75, 0.07); border: 1px solid var(--border); margin-bottom: 14px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--green); overflow: hidden; }
+    .speaker-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .speaker-card__name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 4px; }
+    .speaker-card__role { font-size: 0.8rem; color: var(--green); font-weight: 500; margin-bottom: 10px; line-height: 1.4; }
+    .speaker-card__bio { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+    .speaker-card--featured { border-color: rgba(127, 212, 75, 0.4); background: rgba(127, 212, 75, 0.04); }
+    .speaker-badge { display: inline-block; font-family: var(--font-display); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); background: var(--green); padding: 3px 8px; border-radius: 1px; margin-bottom: 12px; }
+    .speaker-note { margin-top: 40px; padding: 24px 28px; border: 1px solid var(--border-mid); border-left: 4px solid var(--green); background: rgba(127, 212, 75, 0.04); border-radius: 2px; }
+    .speaker-note p { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
+    .speaker-note strong { color: var(--white); }
+
+    .organiser { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start; }
+    .organiser__avatar { width: 100px; height: 100px; border-radius: 2px; background: rgba(127, 212, 75, 0.07); border: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--green); overflow: hidden; flex-shrink: 0; }
+    .organiser__avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .organiser__name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); margin-bottom: 4px; }
+    .organiser__title { font-size: 0.85rem; color: var(--green); font-weight: 500; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+    .organiser__body { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; }
+
+    .event-details { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+    .detail-block { display: flex; gap: 16px; align-items: flex-start; }
+    .detail-block__icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+    .detail-block__label { font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
+    .detail-block__value { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--white); line-height: 1.3; }
+    .detail-block__note { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5; }
+    .security-note { margin-top: 40px; padding: 20px 24px; background: rgba(127, 212, 75, 0.04); border: 1px solid var(--border); border-radius: 2px; }
+    .security-note p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+    .security-note strong { color: var(--text); }
+
+    .partners-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin-top: 48px; }
+    .partner-slot { border: 1px solid var(--border); border-radius: 2px; padding: 28px 20px; display: flex; align-items: center; justify-content: center; min-height: 100px; background: var(--panel); transition: border-color 0.2s; }
+    .partner-slot:hover { border-color: var(--border-mid); }
+    .partner-slot__name { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); text-align: center; line-height: 1.3; }
+    .partner-slot--placeholder { border-style: dashed; opacity: 0.5; }
+
+    .booking-wrap { max-width: 780px; margin: 0 auto; }
+    .booking-head { text-align: center; margin-bottom: 40px; }
+    .booking-head .section-title { font-size: clamp(2.2rem, 5vw, 3.5rem); }
+    .booking-reassure { display: inline-flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--text-muted); margin-top: 12px; }
+    .booking-reassure::before { content: '🔒'; font-size: 0.85rem; }
+    .iframe-container { border: 1px solid var(--border); border-radius: 2px; overflow: hidden; background: var(--panel); }
+    .iframe-container iframe { width: 100%; border: none; display: block; min-height: 750px; }
+
+    .cta-band { background: var(--panel); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 72px 0; text-align: center; }
+    .cta-band__title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; text-transform: uppercase; color: var(--white); margin-bottom: 12px; }
+    .cta-band__sub { font-size: 1rem; color: var(--text-muted); margin-bottom: 36px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .cta-band__actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    .footer { background: var(--black); border-top: 1px solid var(--border); padding: 40px 0 28px; }
+    .footer__inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer__brand { font-family: var(--font-display); font-size: 1rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); }
+    .footer__brand span { color: var(--green); }
+    .footer__meta { font-size: 0.8rem; color: var(--text-muted); text-align: right; }
+    .footer__copy { font-size: 0.78rem; color: var(--text-muted); margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; }
+
+    @media (max-width: 768px) {
+      .section { padding: 64px 0; }
+      .event-details { grid-template-columns: 1fr; gap: 24px; }
+      .organiser { grid-template-columns: 1fr; gap: 20px; }
+      .hero__headline { font-size: clamp(2.8rem, 10vw, 4.5rem); }
+      .hero__actions { flex-direction: column; align-items: flex-start; }
+      .cta-band__actions { flex-direction: column; align-items: center; }
+      .footer__inner { flex-direction: column; text-align: center; }
+      .footer__meta { text-align: center; }
+      .iframe-container iframe { min-height: 920px; }
+    }
+    @media (max-width: 480px) {
+      .speakers-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#register" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;focus:static">Skip to registration form</a>
+
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#top" class="nav__brand">Mission <span>Business</span></a>
+        <a href="#register" class="btn btn--primary nav__cta">Register Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero" id="top" aria-labelledby="hero-heading">
+    <div class="container">
+      <div class="hero__inner">
+        <p class="hero__kicker">8 July 2026 · Grantham, Lincolnshire</p>
+        <h1 class="hero__headline" id="hero-heading">
+          Mission<br>Business<br><em>Is Back.</em>
+        </h1>
+        <p class="hero__sub">Practical insight. Real opportunity. Powerful connections.</p>
+        <p class="hero__body">Mission Business returns for its second year, bringing together business leaders, defence insight, practical speakers, and valuable regional connections — at Prince William of Gloucester Barracks, Grantham.</p>
+        <ul class="hero__proof" aria-label="Event highlights">
+          <li class="proof-item">Free to attend</li>
+          <li class="proof-item">Practical speaker sessions</li>
+          <li class="proof-item">Defence and business insight</li>
+          <li class="proof-item">Valuable networking</li>
+          <li class="proof-item">Hosted at PWOGB, Grantham</li>
+          <li class="proof-item">Includes lunch</li>
+        </ul>
+        <div class="hero__actions">
+          <a href="#register" class="btn btn--primary">Register Now — It's Free</a>
+          <a href="#details" class="btn btn--ghost">View Event Details</a>
+        </div>
+        <p class="hero__soldout"><strong>Last year's event sold out.</strong>&nbsp; Register early to secure your place.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="why" aria-labelledby="why-heading">
+    <div class="container">
+      <p class="label">Why Attend</p>
+      <h2 class="section-title" id="why-heading">What You'll Take Away</h2>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="section-lead">Mission Business is designed for people who value their time. Every session is built around practical outcomes, not theory.</p>
+      <div class="cards" role="list">
+        <article class="card" role="listitem">
+          <div class="card__icon" aria-hidden="true">🎯</div>
+          <h3 class="card__title">Understand Real Opportunity</h3>
+          <p class="card__body">Get a clear picture of defence-related opportunities available to regional businesses — and understand how to pursue them with confidence.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card__icon" aria-hidden="true">🎙</div>
+          <h3 class="card__title">Practical Speaker Sessions</h3>
+          <p class="card__body">Hear directly from experienced speakers with real-world insight. No filler content — every session is chosen for its value to business owners and decision-makers.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card__icon" aria-hidden="true">🪖</div>
+          <h3 class="card__title">Explore Military Talent</h3>
+          <p class="card__body">Learn why employing service leavers and ex-military talent is one of the smartest moves a business can make — and how to make it happen.</p>
+        </article>
+        <article class="card" role="listitem">
+          <div class="card__icon" aria-hidden="true">🤝</div>
+          <h3 class="card__title">Build the Right Connections</h3>
+          <p class="card__body">Spend time with business leaders, partners, and organisations that matter across Lincolnshire and the East Midlands.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" id="highlights" aria-labelledby="highlights-heading">
+    <div class="container">
+      <p class="label">Event Highlights</p>
+      <h2 class="section-title" id="highlights-heading">What to Expect</h2>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="highlights" role="list">
+        <div class="highlight" role="listitem">
+          <div class="highlight__num" aria-hidden="true">01</div>
+          <div class="highlight__content">
+            <h3 class="highlight__title">Year Two Returns</h3>
+            <p class="highlight__body">Building on a successful debut, Mission Business 2026 brings a stronger programme and a bigger platform.</p>
+          </div>
+        </div>
+        <div class="highlight" role="listitem">
+          <div class="highlight__num" aria-hidden="true">02</div>
+          <div class="highlight__content">
+            <h3 class="highlight__title">Business-First Sessions</h3>
+            <p class="highlight__body">Practical content designed for owners and decision-makers. No fluff. Useful from the first session to the last.</p>
+          </div>
+        </div>
+        <div class="highlight" role="listitem">
+          <div class="highlight__num" aria-hidden="true">03</div>
+          <div class="highlight__content">
+            <h3 class="highlight__title">Strong Regional Relevance</h3>
+            <p class="highlight__body">Tailored for Lincolnshire and the East Midlands — with speakers, topics, and connections that reflect the region.</p>
+          </div>
+        </div>
+        <div class="highlight" role="listitem">
+          <div class="highlight__num" aria-hidden="true">04</div>
+          <div class="highlight__content">
+            <h3 class="highlight__title">Unique Venue</h3>
+            <p class="highlight__body">Hosted on an active military base. A setting that reinforces the seriousness and credibility of the event.</p>
+          </div>
+        </div>
+        <div class="highlight" role="listitem">
+          <div class="highlight__num" aria-hidden="true">05</div>
+          <div class="highlight__content">
+            <h3 class="highlight__title">Networking &amp; Lunch Included</h3>
+            <p class="highlight__body">Structured networking opportunities throughout the day, plus a light lunch — time to connect with the right people.</p>
+          </div>
+        </div>
+        <div class="highlight" role="listitem">
+          <div class="highlight__num" aria-hidden="true">06</div>
+          <div class="highlight__content">
+            <h3 class="highlight__title">Completely Free</h3>
+            <p class="highlight__body">No ticket price. No catch. High-quality content, in a high-quality setting, at no cost to you.</p>
+          </div>
+        </div>
+      </div>
+      <div class="sold-out-banner" role="note">
+        <div class="sold-out-banner__icon" aria-hidden="true">📢</div>
+        <p class="sold-out-banner__text"><strong>Last year's Mission Business sold out.</strong> Places are limited. Register early to avoid missing out.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="speakers" aria-labelledby="speakers-heading">
+    <div class="container">
+      <p class="label">Selected Speakers</p>
+      <h2 class="section-title" id="speakers-heading">Who You'll Hear From</h2>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="section-lead">A selection of experienced, credible voices from business, defence, and leadership. Full speaker details coming soon.</p>
+      <div class="speaker-note" role="note">
+        <p><strong>One of our speakers made history</strong> as the first ever female fast jet pilot — bringing a perspective on leadership, performance, and breaking boundaries that's directly relevant to business.</p>
+      </div>
+      <div class="speakers-grid" role="list">
+        <article class="speaker-card speaker-card--featured" role="listitem">
+          <div class="speaker-badge">Organiser</div>
+          <div class="speaker-card__avatar" aria-label="Paul Green">PG</div>
+          <h3 class="speaker-card__name">Paul Green</h3>
+          <p class="speaker-card__role">Business Coach, Mentor &amp; Founder, Business Unfinished</p>
+          <p class="speaker-card__bio">An experienced business coach and connector with a long track record of helping businesses grow, build momentum, and create meaningful opportunities.</p>
+        </article>
+        <article class="speaker-card" role="listitem">
+          <div class="speaker-card__avatar" aria-label="Col Lorna Ward">LW</div>
+          <h3 class="speaker-card__name">Col Lorna Ward</h3>
+          <p class="speaker-card__role">Senior Military Officer</p>
+          <p class="speaker-card__bio">Speaker bio to be confirmed. Expert in military leadership and organisational development.</p>
+        </article>
+        <article class="speaker-card" role="listitem">
+          <div class="speaker-card__avatar" aria-label="Lynsey Parke">LP</div>
+          <h3 class="speaker-card__name">Lynsey Parke</h3>
+          <p class="speaker-card__role">Speaker bio coming soon</p>
+          <p class="speaker-card__bio">Speaker bio to be confirmed. Details will be updated ahead of the event.</p>
+        </article>
+        <article class="speaker-card" role="listitem">
+          <div class="speaker-card__avatar" aria-label="Helen Seymour">HS</div>
+          <h3 class="speaker-card__name">Helen Seymour</h3>
+          <p class="speaker-card__role">Speaker bio coming soon</p>
+          <p class="speaker-card__bio">Speaker bio to be confirmed. Details will be updated ahead of the event.</p>
+        </article>
+        <article class="speaker-card" role="listitem">
+          <div class="speaker-card__avatar" aria-label="Maj Guy Page">GP</div>
+          <h3 class="speaker-card__name">Maj Guy Page</h3>
+          <p class="speaker-card__role">Major, British Army</p>
+          <p class="speaker-card__bio">Speaker bio to be confirmed. Brings military operational experience with direct business application.</p>
+        </article>
+        <article class="speaker-card" role="listitem">
+          <div class="speaker-card__avatar" aria-label="Lt Col Noel Sheeran">NS</div>
+          <h3 class="speaker-card__name">Lt Col Noel Sheeran</h3>
+          <p class="speaker-card__role">Lieutenant Colonel, British Army</p>
+          <p class="speaker-card__bio">Speaker bio to be confirmed. Details will be updated ahead of the event.</p>
+        </article>
+        <article class="speaker-card" role="listitem">
+          <div class="speaker-card__avatar" aria-label="Maj Jordan Kemp">JK</div>
+          <h3 class="speaker-card__name">Maj Jordan Kemp</h3>
+          <p class="speaker-card__role">Major, British Army</p>
+          <p class="speaker-card__bio">Speaker bio to be confirmed. Details will be updated ahead of the event.</p>
+        </article>
+        <article class="speaker-card" role="listitem">
+          <div class="speaker-card__avatar" aria-label="Ian Astley">IA</div>
+          <h3 class="speaker-card__name">Ian Astley</h3>
+          <p class="speaker-card__role">Speaker bio coming soon</p>
+          <p class="speaker-card__bio">Speaker bio to be confirmed. Details will be updated ahead of the event.</p>
+        </article>
+        <article class="speaker-card" role="listitem">
+          <div class="speaker-card__avatar" aria-label="Scott Linfoot">SL</div>
+          <h3 class="speaker-card__name">Scott Linfoot</h3>
+          <p class="speaker-card__role">Speaker bio coming soon</p>
+          <p class="speaker-card__bio">Speaker bio to be confirmed. Details will be updated ahead of the event.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" id="organiser" aria-labelledby="organiser-heading">
+    <div class="container">
+      <p class="label">The Organiser</p>
+      <h2 class="section-title" id="organiser-heading">Behind Mission Business</h2>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="organiser">
+        <div class="organiser__avatar" aria-label="Paul Green">PG</div>
+        <div>
+          <h3 class="organiser__name">Paul Green</h3>
+          <p class="organiser__title">Founder, Business Unfinished · Organiser, Mission Business</p>
+          <p class="organiser__body">Paul Green is an experienced business coach, mentor, and connector with a long track record of helping businesses grow, build momentum, and create meaningful opportunities. Mission Business is his initiative — built to give Lincolnshire and East Midlands business leaders access to insight and connections that are genuinely hard to find elsewhere.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="details" aria-labelledby="details-heading">
+    <div class="container">
+      <p class="label">Event Details</p>
+      <h2 class="section-title" id="details-heading">The Day at a Glance</h2>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="event-details">
+        <div class="detail-block">
+          <div class="detail-block__icon" aria-hidden="true">📅</div>
+          <div>
+            <p class="detail-block__label">Date</p>
+            <p class="detail-block__value">Wednesday, 8 July 2026</p>
+          </div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-block__icon" aria-hidden="true">🕘</div>
+          <div>
+            <p class="detail-block__label">Time</p>
+            <p class="detail-block__value">8:45am – 2:15pm</p>
+          </div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-block__icon" aria-hidden="true">📍</div>
+          <div>
+            <p class="detail-block__label">Venue</p>
+            <p class="detail-block__value">Prince William of Gloucester Barracks</p>
+            <p class="detail-block__note">Grantham, NG31 7TE</p>
+          </div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-block__icon" aria-hidden="true">🍽</div>
+          <div>
+            <p class="detail-block__label">Catering</p>
+            <p class="detail-block__value">Light Lunch Included</p>
+            <p class="detail-block__note">Provided for all registered attendees.</p>
+          </div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-block__icon" aria-hidden="true">🎟</div>
+          <div>
+            <p class="detail-block__label">Cost</p>
+            <p class="detail-block__value">Free to Attend</p>
+            <p class="detail-block__note">Pre-registration is required.</p>
+          </div>
+        </div>
+        <div class="detail-block">
+          <div class="detail-block__icon" aria-hidden="true">🌍</div>
+          <div>
+            <p class="detail-block__label">Who Should Attend</p>
+            <p class="detail-block__value">Business Leaders &amp; Decision-Makers</p>
+            <p class="detail-block__note">Lincolnshire and East Midlands focus.</p>
+          </div>
+        </div>
+      </div>
+      <div class="security-note" role="note">
+        <p><strong>Security access notice:</strong> Attendee details are required in advance to facilitate access on the day. Please ensure you register before the event — all attendees must be pre-approved for entry to the barracks.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark" id="partners" aria-labelledby="partners-heading">
+    <div class="container">
+      <p class="label">Partners &amp; Sponsors</p>
+      <h2 class="section-title" id="partners-heading">Supported By</h2>
+      <div class="divider" aria-hidden="true"></div>
+      <p class="section-lead">Mission Business is made possible with the support of the following organisations.</p>
+      <div class="partners-grid" role="list">
+        <div class="partner-slot" role="listitem" aria-label="South Kesteven District Council">
+          <p class="partner-slot__name">South Kesteven District Council</p>
+        </div>
+        <div class="partner-slot" role="listitem" aria-label="Ministry of Defence">
+          <p class="partner-slot__name">Ministry of Defence</p>
+        </div>
+        <div class="partner-slot" role="listitem" aria-label="Business Unfinished">
+          <p class="partner-slot__name">Business Unfinished</p>
+        </div>
+        <div class="partner-slot partner-slot--placeholder" role="listitem" aria-label="Partner logo coming soon">
+          <p class="partner-slot__name">Partner Logo</p>
+        </div>
+        <div class="partner-slot partner-slot--placeholder" role="listitem" aria-label="Partner logo coming soon">
+          <p class="partner-slot__name">Partner Logo</p>
+        </div>
+        <div class="partner-slot partner-slot--placeholder" role="listitem" aria-label="Partner logo coming soon">
+          <p class="partner-slot__name">Partner Logo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="register" aria-labelledby="register-heading">
+    <div class="container">
+      <div class="booking-wrap">
+        <div class="booking-head">
+          <p class="label">Register Now</p>
+          <h2 class="section-title" id="register-heading">Book Your Place</h2>
+          <p class="booking-reassure">Secure your free place today. Pre-registration is required.</p>
+        </div>
+        <div class="iframe-container">
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/3On4y0iRSXBd173zclN8"
+            title="Mission Business 2026 Registration Form"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-band" role="complementary" aria-label="Event registration call to action">
+    <div class="container">
+      <p class="cta-band__title">Join Us at Mission Business 2026</p>
+      <p class="cta-band__sub">Free to attend. Limited places. 8 July 2026, Grantham.</p>
+      <div class="cta-band__actions">
+        <a href="#register" class="btn btn--primary">Register for Free</a>
+        <a href="#details" class="btn btn--ghost">View Event Details</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <p class="footer__brand">Mission <span>Business</span> 2026</p>
+        <div class="footer__meta">
+          <p>8 July 2026 · Prince William of Gloucester Barracks, Grantham</p>
+          <p>Organised by <a href="#organiser">Business Unfinished</a></p>
+        </div>
+      </div>
+      <p class="footer__copy">© 2026 Mission Business. All rights reserved. Event organised by Business Unfinished.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
