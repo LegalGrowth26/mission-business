@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO -->
+  <title>Mission Business 2026 | Free Business Event | Grantham, Lincolnshire</title>
+  <meta name="description" content="Mission Business returns for year two. A free, high-quality event for Lincolnshire and East Midlands business leaders at Prince William of Gloucester Barracks, Grantham. 8 July 2026." />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mission Business 2026 | Lincolnshire's Premier Business Event" />
+  <meta property="og:description" content="Practical insight. Real opportunity. Powerful connections. Join us at Prince William of Gloucester Barracks, Grantham on 8 July 2026. Free to attend. Last year sold out." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,500;0,700;0,800;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --green:        #7FD44B;
+      --green-dim:    #5faa30;
+      --black:        #080A07;
+      --dark:         #0E1209;
+      --panel:        #131A0E;
+      --panel-alt:    #0A0F07;
+      --border:       rgba(127, 212, 75, 0.15);
+      --border-mid:   rgba(127, 212, 75, 0.3);
+      --text:         #E8EDE3;
+      --text-muted:   #8A9882;
+      --white:        #FFFFFF;
+      --font-display: 'Barlow Condensed', sans-serif;
+      --font-body:    'Barlow', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--green); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 88px 0; }
+    .section--alt { background: var(--panel); }
+    .section--dark { background: var(--panel-alt); }
+
+    .label {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .section-lead {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-muted);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+    .divider { width: 48px; height: 3px; background: var(--green); margin: 20px 0 40px; }
+
+    .btn {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.18s, color 0.18s, border-color 0.18s;
+      text-decoration: none;
+      line-height: 1;
+    }
+    .btn--primary { background: var(--green); color: var(--black); border: 2px solid var(--green); }
+    .btn--primary:hover { background: var(--green-dim); border-color: var(--green-dim); text-decoration: none; color: var(--black); }
+    .btn--ghost { background: transparent; color: var(--green); border: 2px solid var(--border-mid); }
+    .btn--ghost:hover { border-color: var(--green); text-decoration: none; }
+
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(8, 10, 7, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav__inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
+    .nav__brand {
+      font-family: var(--font-display); font-size: 1.1rem; font-weight: 800;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); text-decoration: none;
+    }
+    .nav__brand span { color: var(--green); }
+    .nav__cta { font-size: 0.85rem; padding: 10px 24px; }
+
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding-top: 60px; position: relative; overflow: hidden; background: var(--black);
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(127, 212, 75, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(127, 212, 75, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px; pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; top: -200px; right: -200px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(127, 212, 75, 0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero__inner { position: relative; z-index: 1; padding: 80px 0; }
+    .hero__kicker {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-display); font-size: 0.78rem; font-weight: 700;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--green); margin-bottom: 28px;
+    }
+    .hero__kicker::before { content: ''; display: block; width: 32px; height: 2px; background: var(--green); }
+    .hero__headline {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 800; line-height: 0.95; text-transform: uppercase; color: var(--white); margin-bottom: 12px;
+    }
+    .hero__headline em { font-style: normal; color: var(--green); display: block; }
+    .hero__sub {
+      font-family: var(--font-display); font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 300; font-style: italic; color: var(--text-muted); margin-bottom: 32px; letter-spacing: 0.02em;
+    }
+    .hero__body { font-size: 1.05rem; color: var(--text); max-width: 580px; margin-bottom: 40px; line-height: 1.75; }
+    .hero__pr
