@@ -19,14 +19,14 @@
 
   <style>
     :root {
-      --green:        #7FD44B;
-      --green-dim:    #5faa30;
+      --green:        #13c61a;
+      --green-dim:    #0fa015;
       --black:        #080A07;
       --dark:         #0E1209;
       --panel:        #131A0E;
       --panel-alt:    #0A0F07;
-      --border:       rgba(127, 212, 75, 0.15);
-      --border-mid:   rgba(127, 212, 75, 0.3);
+      --border:       rgba(19, 198, 26, 0.15);
+      --border-mid:   rgba(19, 198, 26, 0.3);
       --text:         #E8EDE3;
       --text-muted:   #8A9882;
       --white:        #FFFFFF;
@@ -112,6 +112,7 @@
       letter-spacing: 0.08em; text-transform: uppercase; color: var(--white); text-decoration: none;
     }
     .nav__brand span { color: var(--green); }
+    .nav__logo { height: 36px; width: auto; display: block; }
     .nav__cta { font-size: 0.85rem; padding: 10px 24px; }
 
     .hero {
@@ -120,13 +121,13 @@
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background-image: linear-gradient(rgba(127, 212, 75, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(127, 212, 75, 0.04) 1px, transparent 1px);
+      background-image: linear-gradient(rgba(19, 198, 26, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(19, 198, 26, 0.04) 1px, transparent 1px);
       background-size: 60px 60px; pointer-events: none;
     }
     .hero::after {
       content: ''; position: absolute; top: -200px; right: -200px;
       width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(127, 212, 75, 0.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(19, 198, 26, 0.07) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero__inner { position: relative; z-index: 1; padding: 80px 0; }
@@ -151,7 +152,7 @@
     .proof-item { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; color: var(--text); }
     .proof-item::before {
       content: '✓'; display: flex; align-items: center; justify-content: center;
-      width: 18px; height: 18px; background: rgba(127, 212, 75, 0.15);
+      width: 18px; height: 18px; background: rgba(19, 198, 26, 0.15);
       border: 1px solid var(--green); border-radius: 2px; font-size: 0.7rem; color: var(--green); flex-shrink: 0;
     }
     .hero__actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
@@ -170,31 +171,33 @@
     .highlight__num { font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; color: var(--green); line-height: 1; flex-shrink: 0; opacity: 0.7; }
     .highlight__title { font-family: var(--font-display); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--white); margin-bottom: 6px; }
     .highlight__body { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-    .sold-out-banner { display: flex; align-items: center; gap: 14px; background: rgba(127, 212, 75, 0.06); border: 1px solid var(--border-mid); border-left: 4px solid var(--green); padding: 18px 24px; border-radius: 2px; margin-top: 32px; }
+    .sold-out-banner { display: flex; align-items: center; gap: 14px; background: rgba(19, 198, 26, 0.06); border: 1px solid var(--border-mid); border-left: 4px solid var(--green); padding: 18px 24px; border-radius: 2px; margin-top: 32px; }
     .sold-out-banner__icon { font-size: 1.4rem; flex-shrink: 0; }
     .sold-out-banner__text { font-size: 0.95rem; color: var(--text); }
     .sold-out-banner__text strong { color: var(--white); }
 
+    /* Round speaker avatars */
     .speakers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 48px; }
     .speaker-card { background: var(--panel); border: 1px solid var(--border); border-radius: 2px; padding: 24px 20px; transition: border-color 0.2s; }
     .speaker-card:hover { border-color: var(--border-mid); }
-    .speaker-card__avatar { width: 72px; height: 72px; border-radius: 2px; background: rgba(127, 212, 75, 0.07); border: 1px solid var(--border); margin-bottom: 14px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--green); overflow: hidden; }
-    .speaker-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .speaker-card__avatar { width: 72px; height: 72px; border-radius: 50%; background: rgba(19, 198, 26, 0.07); border: 2px solid var(--border-mid); margin-bottom: 14px; display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; color: var(--green); overflow: hidden; }
+    .speaker-card__avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
     .speaker-card__name { font-family: var(--font-display); font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--white); margin-bottom: 4px; }
     .speaker-card__role { font-size: 0.8rem; color: var(--green); font-weight: 500; margin-bottom: 10px; line-height: 1.4; }
     .speaker-card__bio { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
-    .speaker-card--featured { border-color: rgba(127, 212, 75, 0.4); background: rgba(127, 212, 75, 0.04); }
+    .speaker-card--featured { border-color: rgba(19, 198, 26, 0.4); background: rgba(19, 198, 26, 0.04); }
     .speaker-badge { display: inline-block; font-family: var(--font-display); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--black); background: var(--green); padding: 3px 8px; border-radius: 1px; margin-bottom: 12px; }
-    .speaker-note { margin-top: 40px; padding: 24px 28px; border: 1px solid var(--border-mid); border-left: 4px solid var(--green); background: rgba(127, 212, 75, 0.04); border-radius: 2px; }
+    .speaker-note { margin-top: 40px; padding: 24px 28px; border: 1px solid var(--border-mid); border-left: 4px solid var(--green); background: rgba(19, 198, 26, 0.04); border-radius: 2px; }
     .speaker-note p { font-size: 0.95rem; color: var(--text); line-height: 1.7; }
     .speaker-note strong { color: var(--white); }
 
-    .organiser { display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start; }
-    .organiser__avatar { width: 100px; height: 100px; border-radius: 2px; background: rgba(127, 212, 75, 0.07); border: 1px solid var(--border-mid); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--green); overflow: hidden; flex-shrink: 0; }
-    .organiser__avatar img { width: 100%; height: 100%; object-fit: cover; }
-    .organiser__name { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); margin-bottom: 4px; }
-    .organiser__title { font-size: 0.85rem; color: var(--green); font-weight: 500; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
-    .organiser__body { font-size: 0.95rem; color: var(--text-muted); line-height: 1.75; }
+    .organiser-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .organiser { display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: start; }
+    .organiser__avatar { width: 100px; height: 100px; border-radius: 50%; background: rgba(19, 198, 26, 0.07); border: 2px solid var(--border-mid); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--green); overflow: hidden; flex-shrink: 0; }
+    .organiser__avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+    .organiser__name { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: var(--white); margin-bottom: 4px; }
+    .organiser__title { font-size: 0.82rem; color: var(--green); font-weight: 500; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; line-height: 1.4; }
+    .organiser__body { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
 
     .event-details { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
     .detail-block { display: flex; gap: 16px; align-items: flex-start; }
@@ -202,7 +205,7 @@
     .detail-block__label { font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--green); margin-bottom: 4px; }
     .detail-block__value { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: var(--white); line-height: 1.3; }
     .detail-block__note { font-size: 0.82rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5; }
-    .security-note { margin-top: 40px; padding: 20px 24px; background: rgba(127, 212, 75, 0.04); border: 1px solid var(--border); border-radius: 2px; }
+    .security-note { margin-top: 40px; padding: 20px 24px; background: rgba(19, 198, 26, 0.04); border: 1px solid var(--border); border-radius: 2px; }
     .security-note p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
     .security-note strong { color: var(--text); }
 
@@ -232,6 +235,9 @@
     .footer__meta { font-size: 0.8rem; color: var(--text-muted); text-align: right; }
     .footer__copy { font-size: 0.78rem; color: var(--text-muted); margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; }
 
+    @media (max-width: 900px) {
+      .organiser-grid { grid-template-columns: 1fr; }
+    }
     @media (max-width: 768px) {
       .section { padding: 64px 0; }
       .event-details { grid-template-columns: 1fr; gap: 24px; }
@@ -250,11 +256,12 @@
 </head>
 <body>
 
-  <a href="#register" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;focus:static">Skip to registration form</a>
+  <a href="#register" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to registration form</a>
 
   <nav class="nav" aria-label="Main navigation">
     <div class="container">
       <div class="nav__inner">
+        <!-- LOGO: Replace the text below with <img src="mb-logo.png" alt="Mission Business 2026" class="nav__logo"> once logo is supplied -->
         <a href="#top" class="nav__brand">Mission <span>Business</span></a>
         <a href="#register" class="btn btn--primary nav__cta">Register Free</a>
       </div>
@@ -272,7 +279,7 @@
         <p class="hero__body">Mission Business returns for its second year, bringing together business leaders, defence insight, practical speakers, and valuable regional connections — at Prince William of Gloucester Barracks, Grantham.</p>
         <ul class="hero__proof" aria-label="Event highlights">
           <li class="proof-item">Free to attend</li>
-          <li class="proof-item">Practical speaker sessions</li>
+          <li class="proof-item">Defence business opportunities</li>
           <li class="proof-item">Defence and business insight</li>
           <li class="proof-item">Valuable networking</li>
           <li class="proof-item">Hosted at PWOGB, Grantham</li>
@@ -292,7 +299,7 @@
       <p class="label">Why Attend</p>
       <h2 class="section-title" id="why-heading">What You'll Take Away</h2>
       <div class="divider" aria-hidden="true"></div>
-      <p class="section-lead">Mission Business is designed for people who value their time. Every session is built around practical outcomes, not theory.</p>
+      <p class="section-lead">Mission Business is designed for people who value their time. The day is about learning more of the business growth opportunities from the defence sector.</p>
       <div class="cards" role="list">
         <article class="card" role="listitem">
           <div class="card__icon" aria-hidden="true">🎯</div>
@@ -302,7 +309,7 @@
         <article class="card" role="listitem">
           <div class="card__icon" aria-hidden="true">🎙</div>
           <h3 class="card__title">Practical Speaker Sessions</h3>
-          <p class="card__body">Hear directly from experienced speakers with real-world insight. No filler content — every session is chosen for its value to business owners and decision-makers.</p>
+          <p class="card__body">Hear directly from experienced speakers with real-world insight. Every session is chosen for its value to business owners and decision-makers.</p>
         </article>
         <article class="card" role="listitem">
           <div class="card__icon" aria-hidden="true">🪖</div>
@@ -335,7 +342,7 @@
           <div class="highlight__num" aria-hidden="true">02</div>
           <div class="highlight__content">
             <h3 class="highlight__title">Business-First Sessions</h3>
-            <p class="highlight__body">Practical content designed for owners and decision-makers. No fluff. Useful from the first session to the last.</p>
+            <p class="highlight__body">Content designed for owners and decision-makers. Useful from the first session to the last.</p>
           </div>
         </div>
         <div class="highlight" role="listitem">
@@ -391,6 +398,13 @@
           <p class="speaker-card__role">Business Coach, Mentor &amp; Founder, Business Unfinished</p>
           <p class="speaker-card__bio">An experienced business coach and connector with a long track record of helping businesses grow, build momentum, and create meaningful opportunities.</p>
         </article>
+        <article class="speaker-card speaker-card--featured" role="listitem">
+          <div class="speaker-badge">Organiser</div>
+          <div class="speaker-card__avatar" aria-label="Debbie Nicholls">DN</div>
+          <h3 class="speaker-card__name">Debbie Nicholls</h3>
+          <p class="speaker-card__role">Armed Forces &amp; Communications Officer, SKDC · Organiser, Mission Business</p>
+          <p class="speaker-card__bio">Bio to follow.</p>
+        </article>
         <article class="speaker-card" role="listitem">
           <div class="speaker-card__avatar" aria-label="Col Lorna Ward">LW</div>
           <h3 class="speaker-card__name">Col Lorna Ward</h3>
@@ -445,15 +459,25 @@
 
   <section class="section section--dark" id="organiser" aria-labelledby="organiser-heading">
     <div class="container">
-      <p class="label">The Organiser</p>
+      <p class="label">The Organisers</p>
       <h2 class="section-title" id="organiser-heading">Behind Mission Business</h2>
       <div class="divider" aria-hidden="true"></div>
-      <div class="organiser">
-        <div class="organiser__avatar" aria-label="Paul Green">PG</div>
-        <div>
-          <h3 class="organiser__name">Paul Green</h3>
-          <p class="organiser__title">Founder, Business Unfinished · Organiser, Mission Business</p>
-          <p class="organiser__body">Paul Green is an experienced business coach, mentor, and connector with a long track record of helping businesses grow, build momentum, and create meaningful opportunities. Mission Business is his initiative — built to give Lincolnshire and East Midlands business leaders access to insight and connections that are genuinely hard to find elsewhere.</p>
+      <div class="organiser-grid">
+        <div class="organiser">
+          <div class="organiser__avatar" aria-label="Paul Green">PG</div>
+          <div>
+            <h3 class="organiser__name">Paul Green</h3>
+            <p class="organiser__title">Founder, Business Unfinished · Organiser, Mission Business</p>
+            <p class="organiser__body">Paul Green is an experienced business coach, mentor, and connector with a long track record of helping businesses grow, build momentum, and create meaningful opportunities. Mission Business is his initiative — built to give Lincolnshire and East Midlands business leaders access to insight and connections that are genuinely hard to find elsewhere.</p>
+          </div>
+        </div>
+        <div class="organiser">
+          <div class="organiser__avatar" aria-label="Debbie Nicholls">DN</div>
+          <div>
+            <h3 class="organiser__name">Debbie Nicholls</h3>
+            <p class="organiser__title">Armed Forces &amp; Communications Officer, SKDC · Organiser, Mission Business</p>
+            <p class="organiser__body">Bio to follow.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -584,10 +608,10 @@
         <p class="footer__brand">Mission <span>Business</span> 2026</p>
         <div class="footer__meta">
           <p>8 July 2026 · Prince William of Gloucester Barracks, Grantham</p>
-          <p>Organised by <a href="#organiser">Business Unfinished</a></p>
+          <p>Organised by Business Unfinished &amp; South Kesteven District Council</p>
         </div>
       </div>
-      <p class="footer__copy">© 2026 Mission Business. All rights reserved. Event organised by Business Unfinished.</p>
+      <p class="footer__copy">© 2026 Mission Business. All rights reserved. Organised by Business Unfinished &amp; South Kesteven District Council.</p>
     </div>
   </footer>
 
